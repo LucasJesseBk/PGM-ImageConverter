@@ -1,11 +1,13 @@
 # PGM Image Converter & Sketch Viewer
 
-This repository contains two projects written in C:
+An optional extension of a university assignment focused on converting binary `.pgm` image files into a custom `.sk` format, along with a visualiser for this custom format using SDL2.
 
-1. **Sketch Viewer** – A small program to view `.sk` files.
-2. **PGM Image Converter** – A converter from `.pgm` files to `.sk` format.
+## Features
 
-Both projects use `clang` and support AddressSanitizer/UndefinedBehaviorSanitizer for debugging.
+1. **Sketch Viewer** – A program to display `.sk` files.
+2. **PGM Image Converter** – Converts `.pgm` files into `.sk` format.
+
+Both programs are written in C using `clang`, with AddressSanitizer and UndefinedBehaviorSanitizer enabled for debugging.
 
 ---
 
@@ -21,15 +23,12 @@ Both projects use `clang` and support AddressSanitizer/UndefinedBehaviorSanitize
 │ ├── pgm_header.c
 │ ├── sk_writer.c
 │ └── tests.c
-├── images/ # Place your .pgm or .sk files here
+├── src/images/ # Input .pgm and .sk files
 └── bin/ # Compiled binaries (sketch, test, image_converter)
-
-
----
 
 ## Building
 
-Make sure you have `clang` installed. Then, run:
+Make sure you have `clang` installed, then run:
 
 ```bash
 make sketch          # Builds bin/sketch
@@ -40,6 +39,15 @@ make image_converter # Builds bin/image_converter
 ## Running Tests
 ./bin/test
 
-## Running Project
-make run_converter FILE=images/(filename).pgm
-make run FILE=images/(filename).sk
+## Running the Programs
+
+# Run the Converter
+make run_converter FILE=example.pgm
+
+# Run the Sketch Viewer
+make run FILE=example.sk
+
+## Notes
+- All binaries are output to the bin/ directory.
+- Sanitizers are enabled for debugging memory issues.
+- Any reported memory leaks originate from external libraries (e.g. SDL2/OpenGL), not from this project.
