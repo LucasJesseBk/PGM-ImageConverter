@@ -1,0 +1,4 @@
+# Suppress known false-positive leaks from SDL2 / OpenGL
+
+leak:libGLX_mesa.so
+leak:libSDL2-2.0.so
