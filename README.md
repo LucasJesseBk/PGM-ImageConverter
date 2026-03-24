@@ -27,7 +27,7 @@ Both projects use `clang` and support AddressSanitizer/UndefinedBehaviorSanitize
 
 ---
 
-## ⚡ Building
+## Building
 
 Make sure you have `clang` installed. Then, run:
 
